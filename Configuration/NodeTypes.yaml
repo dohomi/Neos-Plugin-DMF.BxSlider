@@ -1,0 +1,137 @@
+'DMF.BxSlider:Slider':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    group: 'plugins'
+    label: 'Content Slider'
+    icon: 'icon-th-large'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        bxSliderOptionsB:
+          label: 'Slider Options General'
+        bxSliderOptionsA:
+          label: 'Slider Options Autoplay'
+        bxSliderOptionsC:
+          label: 'Slider Options Pager'
+  childNodes:
+    bxslider:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    auto:
+      type: boolean
+      defaultValue: FALSE
+      ui:
+        label: 'Disable auto scroll'
+        inspector:
+          group: bxSliderOptionsA
+    autoControls:
+      type: boolean
+      defaultValue: FALSE
+      ui:
+        label: 'Scrolling controls (requires auto scroll)'
+        inspector:
+          group: bxSliderOptionsA
+    pause:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Pause between auto transition'
+        inspector:
+          group: bxSliderOptionsA
+      validation:
+        regularExpression:
+          regularExpression: '/[0-9]/'
+
+    autoHover:
+      type: boolean
+      defaultValue: FALSE
+      ui:
+        label: 'Auto show pause on hover'
+        inspector:
+          group: bxSliderOptionsA
+    autoDelay:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Time auto show wait before start'
+        inspector:
+          group: bxSliderOptionsA
+      validation:
+        regularExpression:
+          regularExpression: '/[0-9]/'
+    speed:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Slide transition duration'
+        inspector:
+          group: bxSliderOptionsB
+      validation:
+        regularExpression:
+          regularExpression: '/[0-9]/'
+    mode:
+      type: string
+      defaultValue: 'horizontal'
+      ui:
+        label: 'Type of transitions'
+        inspector:
+          group: bxSliderOptionsB
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'horizontal':
+                label: 'Horizontal'
+              'vertical':
+                label: 'Vertical'
+              'fade':
+                label: 'Fade'
+    ticker:
+      type: boolean
+      defaultValue: FALSE
+      ui:
+        label: 'Use slider in ticker mode'
+        inspector:
+          group: bxSliderOptionsB
+    tickerHover:
+      type: boolean
+      defaultValue: FALSE
+      ui:
+        label: 'Ticker will pause on hover'
+        inspector:
+          group: bxSliderOptionsB
+    pager:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Add pager'
+        inspector:
+          group: bxSliderOptionsC
+    pagerType:
+      type: string
+      defaultValue: 'horizontal'
+      ui:
+        label: 'Type of pager'
+        inspector:
+          group: bxSliderOptionsC
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'full':
+                label: 'Full'
+              'short':
+                label: 'Short'
+
+
+
+
+
+'DMF.BxSlider:BxContent':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    group: 'structure'
+    label: 'Items for Content Slider'
+    icon: 'icon-list-alt'
+    inlineEditable: TRUE
+  childNodes:
+    bxcontent:
+      type: 'TYPO3.Neos:ContentCollection'

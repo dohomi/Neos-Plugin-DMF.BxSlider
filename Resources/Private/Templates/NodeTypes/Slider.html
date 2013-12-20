@@ -1,0 +1,19 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+<div class="bxslider-wrap"
+    {f:if(condition:'{node.properties.auto}', then:' data-auto="true"', else:' data-auto="false"')}
+    {f:if(condition:'{node.properties.autoControls}', then:' data-auto-controls="true"')}
+    {f:if(condition:'{node.properties.pause}', then:' data-pause="{node.properties.pause}"')}
+    {f:if(condition:'{node.properties.autoHover}', then:' data-auto-hover="true"')}
+    {f:if(condition:'{node.properties.autoDelay}', then:' data-auto-delay="{node.properties.autoDelay}"')}
+    {f:if(condition:'{node.properties.speed}', then:' data-speed="{node.properties.speed}"')}
+    {f:if(condition:'{node.properties.mode}', then:' data-mode="{node.properties.mode}"')}
+    {f:if(condition:'{node.properties.ticker}', then:' data-ticker="true"')}
+    {f:if(condition:'{node.properties.tickerHover}', then:' data-ticker-hover="true" data-use-c-s-s="false"')}
+    {f:if(condition:'{node.properties.pager}', then:' data-pager="true"', else:' data-pager="false"')}
+    {f:if(condition:'{node.properties.pagerType}', then:' data-pager-type="{node.properties.pagerType}"')}
+
+        >
+    {sliderItems -> f:format.raw()}
+</div>

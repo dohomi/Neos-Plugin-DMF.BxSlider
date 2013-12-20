@@ -1,0 +1,12 @@
+{
+    "name": "DMF.BxSlider",
+    "version": "0.0.1",
+    "dependencies": {
+        "bxslider-4":"*"
+    },
+    "ignore": [
+        "**/doc*",
+        "**/.*"
+    ],
+    "private": true
+}

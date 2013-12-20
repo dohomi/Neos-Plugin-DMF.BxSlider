@@ -1,0 +1,22 @@
+prototype(DMF.BxSlider:Slider) {
+
+    sliderItems = TYPO3.Neos:ContentCollection {
+        nodePath = 'bxslider'
+        iterationName = 'itemIteration'
+        attributes.class = 'bxslider'
+    }
+
+}
+
+prototype(DMF.BxSlider:BxContent) {
+
+    bxContent = TYPO3.Neos:ContentCollection {
+        nodePath = 'bxcontent'
+    }
+
+    // We want to use the item iterator in the template so we have to store it in ts.
+   // iteration = ${itemIteration}
+
+    //parentIdentifier = ${q(node).parents('[instanceof DMF.BootstrapContent:Accordion]').property('_identifier')}
+    //bootstrapStyle = ${q(node).parents('[instanceof DMF.BootstrapContent:Accordion]').property('bootstrapStyle')}
+}
