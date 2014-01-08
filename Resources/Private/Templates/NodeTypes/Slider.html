@@ -13,7 +13,11 @@
     {f:if(condition:'{node.properties.tickerHover}', then:' data-ticker-hover="true" data-use-c-s-s="false"')}
     {f:if(condition:'{node.properties.pager}', then:' data-pager="true"', else:' data-pager="false"')}
     {f:if(condition:'{node.properties.pagerType}', then:' data-pager-type="{node.properties.pagerType}"')}
-
+    {f:if(condition:'{node.properties.minSlides}', then:' data-min-slides="{node.properties.minSlides}"')}
+    {f:if(condition:'{node.properties.maxSlides}', then:' data-max-slides="{node.properties.maxSlides}"')}
+    {f:if(condition:'{node.properties.slideWidth}', then:' data-slide-width="{node.properties.slideWidth}"')}
+    {f:if(condition:'{node.properties.slideMargin}', then:' data-slide-margin="{node.properties.slideMargin}"')}
+    {f:if(condition:'{node.properties.moveSlides}', then:' data-move-slides="{node.properties.moveSlides}"')}
         >
     {sliderItems -> f:format.raw()}
 </div>

@@ -13,6 +13,8 @@
           label: 'Slider Options Autoplay'
         bxSliderOptionsC:
           label: 'Slider Options Pager'
+        bxSliderOptionsD:
+          label: 'Slider Options MultiSlide'
   childNodes:
     bxslider:
       type: 'TYPO3.Neos:ContentCollection'
@@ -120,9 +122,92 @@
                 label: 'Full'
               'short':
                 label: 'Short'
-
-
-
+    minSlides:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Minimum number of slide'
+        inspector:
+          group: bxSliderOptionsD
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '':
+                label: 'Default'
+              '2':
+                label: '2 per slide'
+              '3':
+                label: '3 per slide'
+              '4':
+                label: '4 per slide'
+              '5':
+                label: '5 per slide'
+              '6':
+                label: '6 per slide'
+    maxSlides:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Maximum number of slide'
+        inspector:
+          group: bxSliderOptionsD
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '':
+                label: 'Default'
+              '2':
+                label: '2 per slide'
+              '3':
+                label: '3 per slide'
+              '4':
+                label: '4 per slide'
+              '5':
+                label: '5 per slide'
+              '6':
+                label: '6 per slide'
+    slideWidth:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Slide width'
+        inspector:
+          group: bxSliderOptionsD
+      validation:
+        regularExpression:
+          regularExpression: '/[0-9]/'
+    slideMargin:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Slide margin'
+        inspector:
+          group: bxSliderOptionsD
+      validation:
+        regularExpression:
+          regularExpression: '/[0-9]/'
+    moveSlides:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Move number of slides'
+        inspector:
+          group: bxSliderOptionsD
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '':
+                label: 'Default'
+              '2':
+                label: '2 per slide'
+              '3':
+                label: '3 per slide'
+              '4':
+                label: '4 per slide'
+              '5':
+                label: '5 per slide'
+              '6':
+                label: '6 per slide'
 
 
 'DMF.BxSlider:BxContent':
@@ -132,6 +217,17 @@
     label: 'Items for Content Slider'
     icon: 'icon-list-alt'
     inlineEditable: TRUE
+    inspector:
+      groups:
+        bxSliderOption:
+          label: 'Slider Option'
   childNodes:
     bxcontent:
       type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    link:
+      type: reference
+      ui:
+        label: 'Slide link'
+        inspector:
+          group: bxSliderOption

@@ -2,5 +2,15 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 
 <li>
-    {bxContent -> f:format.raw()}
+    <f:if condition="{node.properties.link}">
+        <f:then>
+            <a href="{neos:uri.node(node:'{node.properties.link}',absolute:'true')}">
+                {bxContent -> f:format.raw()}
+            </a>
+        </f:then>
+        <f:else>
+            {bxContent -> f:format.raw()}
+        </f:else>
+    </f:if>
+
 </li>
