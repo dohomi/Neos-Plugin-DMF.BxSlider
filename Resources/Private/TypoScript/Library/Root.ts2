@@ -1,5 +1,6 @@
-prototype(DMF.BxSlider:Slider) {
+prototype(DMF.BxSlider:Slider) < prototype(TYPO3.Neos:Content) {
 
+    node = ${node}
     sliderItems = TYPO3.Neos:ContentCollection {
         nodePath = 'bxslider'
         iterationName = 'itemIteration'
